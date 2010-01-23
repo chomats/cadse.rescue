@@ -5,12 +5,9 @@ Bundle-SymbolicName: fr.imag.cadse.rescue
 Bundle-Version: 1.0.0
 Eclipse-LazyStart: true
 Bundle-Activator: fr.imag.adele.cadse.rescue.Activator
-Import-Package: fede.workspace.role.eclipse,
- fr.imag.adele.fede.workspace.as.persistence;version="1.0.0",
+Import-Package: fr.imag.adele.fede.workspace.as.persistence;version="1.0.0",
  org.apache.felix.ipojo;version="0.8.0",
  org.eclipse.core.resources,
  org.eclipse.core.runtime,
  org.eclipse.core.runtime.jobs,
  org.osgi.framework;version="1.4.0"
-Require-Bundle: fr.imag.adele.workspace.cadseg.cu.workspace.workspace,
- fr.imag.adele.workspace.cadseg.si.workspace.persistence
