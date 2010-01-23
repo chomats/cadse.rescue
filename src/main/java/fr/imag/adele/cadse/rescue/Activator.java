@@ -28,11 +28,12 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
-import fede.workspace.domain.IWorkspaceLogique;
-import fede.workspace.domain.Item;
-import fede.workspace.domain.ItemType;
-import fede.workspace.domain.impl.CadseCore;
+import fr.imag.adele.cadse.core.Item;
+import fr.imag.adele.cadse.core.ItemType;
+import fr.imag.adele.cadse.core.LogicalWorkspace;
+import fr.imag.adele.cadse.core.impl.CadseCore;
 import fr.imag.adele.fede.workspace.si.persistence.Persistence;
+
 
 public class Activator extends Plugin {
 
@@ -54,7 +55,7 @@ public class Activator extends Plugin {
 	}
 
 	protected void rescue_2() throws IOException, FileNotFoundException {
-		IWorkspaceLogique wl = fede.workspace.domain.impl.CadseCore.getWorkspaceLogique();
+		LogicalWorkspace wl = CadseCore.getLogicalWorkspace();
 
 		Collection<Item> items = wl.getItems();
 		File location_melusine = new File(getLocation(true), ".melusine");
@@ -68,7 +69,7 @@ public class Activator extends Plugin {
 	}
 
 	protected void rescue_1() throws IOException, FileNotFoundException {
-		IWorkspaceLogique wl = CadseCore.getWorkspaceLogique();
+		LogicalWorkspace wl = CadseCore.getLogicalWorkspace();
 
 		Collection<Item> items = wl.getItems();
 		File location_melusine = new File(getLocation(true), ".melusine");
