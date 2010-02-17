@@ -60,7 +60,7 @@ public class Activator extends Plugin {
 		Collection<Item> items = wl.getItems();
 		File location_melusine = new File(getLocation(true), ".melusine");
 		for (Item anItem : items) {
-			if (!anItem.isStatic() && anItem.getId() != null) {
+			if (!anItem.isRuntime() && anItem.getId() != null) {
 				File itemFile = new File(location_melusine, anItem.getId().toString() + ".ser");
 				System.out.println("[Rescue save] " + anItem.getId());
 				Persistence.writeSer(anItem, itemFile);
